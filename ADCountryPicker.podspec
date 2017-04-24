@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ADCountryPicker"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "ADCountryPicker is a swift country picker controller with an option to search countries. Provides country name, ISO 3166 country codes, and calling codes"
   s.homepage     = "https://github.com/AmilaDiman/ADCountryPicker"
   s.license      = { :type => "MIT", :file => "LICENSE" }
