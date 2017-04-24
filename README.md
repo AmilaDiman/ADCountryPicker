@@ -111,6 +111,7 @@ picker.didSelectCountryWithCallingCodeClosure = { name, code, dialCode in
 ## Author
 
 Amila Dimantha, amilasumanasiri@hotmail.com
+
 Core based on work of @mustafaibrahim989
 
 Notes
