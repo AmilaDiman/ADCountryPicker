@@ -17,8 +17,6 @@
 		2453A6D91EADC0D400C81AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2453A6D71EADC0D400C81AB1 /* Main.storyboard */; };
 		245E4ECF1EA9BF250067AF5F /* CallingCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 245E4ECE1EA9BF250067AF5F /* CallingCodes.plist */; };
 		245E4ED11EA9C9110067AF5F /* ADCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245E4ED01EA9C9110067AF5F /* ADCountry.swift */; };
-		245E4ED41EA9D1230067AF5F /* close_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 245E4ED21EA9D1220067AF5F /* close_icon.png */; };
-		245E4ED51EA9D1230067AF5F /* close_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 245E4ED31EA9D1220067AF5F /* close_icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +31,6 @@
 		2453A6D81EADC0D400C81AB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ADCountryPicker/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		245E4ECE1EA9BF250067AF5F /* CallingCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CallingCodes.plist; path = Source/CallingCodes.plist; sourceTree = "<group>"; };
 		245E4ED01EA9C9110067AF5F /* ADCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADCountry.swift; path = Source/ADCountry.swift; sourceTree = "<group>"; };
-		245E4ED21EA9D1220067AF5F /* close_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close_icon.png; path = Source/close_icon.png; sourceTree = "<group>"; };
-		245E4ED31EA9D1220067AF5F /* close_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "close_icon@2x.png"; path = "Source/close_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +78,6 @@
 		05B2585F1C54EB4C002F01FA /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				245E4ED21EA9D1220067AF5F /* close_icon.png */,
-				245E4ED31EA9D1220067AF5F /* close_icon@2x.png */,
 				245E4ECE1EA9BF250067AF5F /* CallingCodes.plist */,
 				05B258641C54EC67002F01FA /* ADCountryPicker.swift */,
 				05214F001C55226B00F57DA5 /* assets.bundle */,
@@ -152,9 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				245E4ED51EA9D1230067AF5F /* close_icon@2x.png in Resources */,
 				2453A6D61EADC0BA00C81AB1 /* LaunchScreen.storyboard in Resources */,
-				245E4ED41EA9D1230067AF5F /* close_icon.png in Resources */,
 				2453A6D91EADC0D400C81AB1 /* Main.storyboard in Resources */,
 				2453A6C91EADC09C00C81AB1 /* Info.plist in Resources */,
 				2453A6D11EADC0A600C81AB1 /* Assets.xcassets in Resources */,

@@ -169,7 +169,9 @@ open class ADCountryPicker: UITableViewController {
         definesPresentationContext = true
         
         if self.presentingViewController != nil {
-            let closeButton = UIBarButtonItem(image: UIImage(named: "close_icon"),
+            
+            let bundle = "assets.bundle/"
+            let closeButton = UIBarButtonItem(image: UIImage(named: bundle + "close_icon"),
                                               style: .plain,
                                               target: self,
                                               action: #selector(self.dismissView))

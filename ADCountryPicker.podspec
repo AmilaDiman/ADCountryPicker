@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ADCountryPicker"
-  s.version      = "1.0.1"
-  s.summary      = "ADCountryPicker is a swift country picker controller with an option to search countries. Provides country name, ISO 3166 country codes, and calling codes"
+  s.version      = "1.0.2"
+  s.summary      = "ADCountryPicker is a swift country picker controller. Provides country name, ISO 3166 country codes, and calling codes"
   s.homepage     = "https://github.com/AmilaDiman/ADCountryPicker"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { " Mustafa Ibrahim"  => "https://github.com/AmilaDiman/ADCountryPicker" }
@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios
   s.ios.deployment_target = "8.0"
-  s.source       = { :git => "https://github.com/AmilaDiman/ADCountryPicker.git", :tag => "1.0.1" }
+  s.source       = { :git => "https://github.com/AmilaDiman/ADCountryPicker.git", :tag => "1.0.2" }
   s.source_files  = 'Source/*.swift'
-  s.resources = ['Source/assets.bundle', 'Source/CallingCodes.plist','Source/close_icon.png','Source/close_icon@2x.png','Source/close_icon@3x.png']
+  s.resources = ['Source/assets.bundle', 'Source/CallingCodes.plist']
   s.requires_arc = true
 end
