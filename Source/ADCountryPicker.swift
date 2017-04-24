@@ -16,12 +16,13 @@ struct Section {
 }
 
 @objc public protocol ADCountryPickerDelegate: class {
-    func countryPicker(_ picker: ADCountryPicker,
+    @objc optional func countryPicker(_ picker: ADCountryPicker,
                        didSelectCountryWithName name: String,
                        code: String)
-    @objc optional func countryPicker(_ picker: ADCountryPicker,
+    func countryPicker(_ picker: ADCountryPicker,
                                       didSelectCountryWithName name: String,
-                                      code: String, dialCode: String)
+                                      code: String,
+                                      dialCode: String)
 }
 
 open class ADCountryPicker: UITableViewController {
@@ -153,7 +154,7 @@ open class ADCountryPicker: UITableViewController {
     open var searchBarBackgroundColor = UIColor.lightGray
     
     convenience public init(completionHandler: @escaping ((String, String) -> ())) {
-        self.init(style:.grouped)
+        self.init()
         self.didSelectCountryClosure = completionHandler
     }
     
@@ -347,8 +348,8 @@ extension ADCountryPicker {
         } else {
             country = sections[(indexPath as NSIndexPath).section].countries[(indexPath as NSIndexPath).row]
         }
-        delegate?.countryPicker(self, didSelectCountryWithName: country.name, code: country.code)
-        delegate?.countryPicker?(self, didSelectCountryWithName: country.name, code: country.code, dialCode: country.dialCode)
+        delegate?.countryPicker?(self, didSelectCountryWithName: country.name, code: country.code)
+        delegate?.countryPicker(self, didSelectCountryWithName: country.name, code: country.code, dialCode: country.dialCode)
         didSelectCountryClosure?(country.name, country.code)
         didSelectCountryWithCallingCodeClosure?(country.name, country.code, country.dialCode)
     }

@@ -26,7 +26,7 @@ Push ADCountryPicker from UIViewController
 
 ```swift
 
-let picker = ADCountryPicker()
+let picker = ADCountryPicker(style: .grouped)
 navigationController?.pushViewController(picker, animated: true)
 
 ```

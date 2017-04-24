@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios
   s.ios.deployment_target = "8.0"
-  s.source       = { :git => "https://github.com/AmilaDiman/ADCountryPicker.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/AmilaDiman/ADCountryPicker.git", :tag => "1.0.1" }
   s.source_files  = 'Source/*.swift'
-  s.resources = ['Source/assets.bundle', 'Source/CallingCodes.plist']
+  s.resources = ['Source/assets.bundle', 'Source/CallingCodes.plist','Source/close_icon.png','Source/close_icon@2x.png','Source/close_icon@3x.png']
   s.requires_arc = true
 end

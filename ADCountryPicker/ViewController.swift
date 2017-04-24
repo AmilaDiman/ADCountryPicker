@@ -21,10 +21,7 @@ class ViewController: UIViewController {
     
     @IBAction func openPickerAction(_ sender: AnyObject) {
         
-        let picker = ADCountryPicker { (name, code) -> () in
-            print(code)
-        }
-        
+        let picker = ADCountryPicker(style: .grouped)
         // delegate
         picker.delegate = self
 
@@ -40,11 +37,11 @@ class ViewController: UIViewController {
         
 //        Use this below code to present the picker
         
-//        let pickerNavigationController = UINavigationController(rootViewController: picker)
-//        self.present(pickerNavigationController, animated: true, completion: nil)
+        let pickerNavigationController = UINavigationController(rootViewController: picker)
+        self.present(pickerNavigationController, animated: true, completion: nil)
 
         
-        navigationController?.pushViewController(picker, animated: true)
+//        navigationController?.pushViewController(picker, animated: true)
     }
 }
 
@@ -56,12 +53,6 @@ extension ViewController: ADCountryPickerDelegate {
         countryNameLabel.text = name
         countryCodeLabel.text = code
         countryCallingCodeLabel.text = dialCode
-    }
-    
-    func countryPicker(_ picker: ADCountryPicker, didSelectCountryWithName name: String, code: String) {
-//        _ = picker.navigationController?.popToRootViewController(animated: true)
-//        self.dismiss(animated: true, completion: nil)
-//        label.text = "Selected Country: \(name) \(code) \(dialCode)"
     }
 }
 
