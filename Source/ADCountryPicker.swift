@@ -283,7 +283,7 @@ extension ADCountryPicker {
         let bundle = "assets.bundle/"
         
         if self.showFlags == true {
-            let image = UIImage(named: bundle + country.code.lowercased() + ".png", in: Bundle(for: ADCountryPicker.self), compatibleWith: nil)
+            let image = UIImage(named: bundle + country.code.uppercased() + ".png", in: Bundle(for: ADCountryPicker.self), compatibleWith: nil)
             if (image != nil) {
                 cell.imageView?.image = image?.fitImage(size: CGSize(width:self.flagHeight, height:flagHeight))
             }
