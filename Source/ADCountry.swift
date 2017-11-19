@@ -9,7 +9,7 @@
 import UIKit
 
 class ADCountry: NSObject {
-    let name: String
+    @objc let name: String
     let code: String
     var section: Int?
     let dialCode: String!
