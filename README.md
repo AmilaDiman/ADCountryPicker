@@ -27,7 +27,7 @@ Swift 4:
 Swift 3:
 
     use_frameworks!
-    pod 'ADCountryPicker', ' ~>1.0.5'
+    pod 'ADCountryPicker', '~> 1.0.5'
 
 Push ADCountryPicker from UIViewController
 
@@ -42,8 +42,8 @@ Present ADCountryPicker from UIViewController
 ```swift
 
 let picker = ADCountryPicker()
-  let pickerNavigationController = UINavigationController(rootViewController: picker)
-  self.present(pickerNavigationController, animated: true, completion: nil)
+let pickerNavigationController = UINavigationController(rootViewController: picker)
+self.present(pickerNavigationController, animated: true, completion: nil)
 
 ```
 ## ADCountryPicker properties
