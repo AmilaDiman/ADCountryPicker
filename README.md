@@ -18,9 +18,16 @@ The picker provides:
 ## Installation
 
 ADCountryPicker is available through [CocoaPods](http://cocoapods.org), to install it simply add the following line to your Podfile:
-   
+
+Swift 4:
+
     use_frameworks!
-    pod 'ADCountryPicker'
+     pod 'ADCountryPicker', '~> 2.0.0'
+    
+Swift 3:
+
+    use_frameworks!
+    pod 'ADCountryPicker', ' ~>1.0.5'
 
 Push ADCountryPicker from UIViewController
 
