@@ -221,9 +221,9 @@ open class ADCountryPicker: UITableViewController {
         
         sections.forEach { (section) -> () in
             section.countries.forEach({ (country) -> () in
-                if country.name.characters.count >= searchText.characters.count {
+                if country.name.count >= searchText.count {
                     let result = country.name.compare(searchText, options: [.caseInsensitive, .diacriticInsensitive],
-                                                      range: searchText.characters.startIndex ..< searchText.characters.endIndex)
+                                                      range: searchText.startIndex ..< searchText.endIndex)
                     if result == .orderedSame {
                         filteredList.append(country)
                     }
@@ -233,6 +233,74 @@ open class ADCountryPicker: UITableViewController {
         
         return filteredList
     }
+    
+    fileprivate func getCountry(_ code: String) -> [ADCountry] {
+        filteredList.removeAll()
+        
+        sections.forEach { (section) -> () in
+            section.countries.forEach({ (country) -> () in
+                if country.code.count >= code.count {
+                    let result = country.code.compare(code, options: [.caseInsensitive, .diacriticInsensitive],
+                                                      range: code.startIndex ..< code.endIndex)
+                    if result == .orderedSame {
+                        filteredList.append(country)
+                    }
+                }
+            })
+        }
+        
+        return filteredList
+    }
+    
+    
+    // MARK: - Public method
+    
+    /// Returns the country flag for the given country code
+    ///
+    /// - Parameter countryCode: ISO code of country to get flag for
+    /// - Returns: the image for given country code if it exists
+    public func getFlag(countryCode: String) -> UIImage? {
+        let countries = self.getCountry(countryCode)
+        
+        if countries.count == 1 {
+            let bundle = "assets.bundle/"
+            return UIImage(named: bundle + countries.first!.code.uppercased() + ".png",
+                           in: Bundle(for: ADCountryPicker.self), compatibleWith: nil)
+        }
+        else {
+            return nil
+        }
+    }
+    
+    /// Returns the country dialing code for the given country code
+    ///
+    /// - Parameter countryCode: ISO code of country to get dialing code for
+    /// - Returns: the dialing code for given country code if it exists
+    public func getDialingCode(countryCode: String) -> String? {
+        let countries = self.getCountry(countryCode)
+        
+        if countries.count == 1 {
+            return countries.first?.dialCode
+        }
+        else {
+            return nil
+        }
+    }
+    
+    /// Returns the country name for the given country code
+    ///
+    /// - Parameter countryCode: ISO code of country to get dialing code for
+    /// - Returns: the country name for given country code if it exists
+    public func getCountryName(countryCode: String) -> String? {
+        let countries = self.getCountry(countryCode)
+        
+        if countries.count == 1 {
+            return countries.first?.name
+        }
+        else {
+            return nil
+        }
+    }
 }
 
 // MARK: - Table view data source
@@ -240,7 +308,7 @@ open class ADCountryPicker: UITableViewController {
 extension ADCountryPicker {
     
     override open func numberOfSections(in tableView: UITableView) -> Int {
-        if searchController.searchBar.text!.characters.count > 0 {
+        if searchController.searchBar.text!.count > 0 {
             return 1
         }
         return sections.count
@@ -255,7 +323,7 @@ extension ADCountryPicker {
     }
     
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.searchBar.text!.characters.count > 0 {
+        if searchController.searchBar.text!.count > 0 {
             return filteredList.count
         }
         return sections[section].countries.count
@@ -272,7 +340,7 @@ extension ADCountryPicker {
         let cell: UITableViewCell! = tempCell
         
         let country: ADCountry!
-        if searchController.searchBar.text!.characters.count > 0 {
+        if searchController.searchBar.text!.count > 0 {
             country = filteredList[(indexPath as NSIndexPath).row]
         } else {
             country = sections[(indexPath as NSIndexPath).section].countries[(indexPath as NSIndexPath).row]
@@ -305,7 +373,7 @@ extension ADCountryPicker {
     
     override open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if !sections[section].countries.isEmpty {
-            if searchController.searchBar.text!.characters.count > 0 {
+            if searchController.searchBar.text!.count > 0 {
                 if let name = filteredList.first?.name {
                     let index = name.index(name.startIndex, offsetBy: 0)
                     return String(describing: name[index])
@@ -354,7 +422,7 @@ extension ADCountryPicker {
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let country: ADCountry!
-        if searchController.searchBar.text!.characters.count > 0 {
+        if searchController.searchBar.text!.count > 0 {
             country = filteredList[(indexPath as NSIndexPath).row]
         } else {
             country = sections[(indexPath as NSIndexPath).section].countries[(indexPath as NSIndexPath).row]
