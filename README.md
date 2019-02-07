@@ -146,7 +146,7 @@ let dialingCode =  picker.getDialCode(countryCode: code)
 ```
 ## Author
 
-Amila Dimantha, amilasumanasiri@hotmail.com
+Amila Dimantha, amilasumanasiri@gmail.com
 
 Core based on work of @mustafaibrahim989
 
