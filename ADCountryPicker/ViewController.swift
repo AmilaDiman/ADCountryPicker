@@ -53,6 +53,10 @@ extension ViewController: ADCountryPickerDelegate {
         countryNameLabel.text = name
         countryCodeLabel.text = code
         countryCallingCodeLabel.text = dialCode
+        
+       let x =  picker.getFlag(countryCode: code)
+        let xx =  picker.getCountryName(countryCode: code)
+        let xxx =  picker.getDialCode(countryCode: code)
     }
 }
 

@@ -258,7 +258,7 @@ open class ADCountryPicker: UITableViewController {
     /// Returns the country flag for the given country code
     ///
     /// - Parameter countryCode: ISO code of country to get flag for
-    /// - Returns: the image for given country code if it exists
+    /// - Returns: the UIImage for given country code if it exists
     public func getFlag(countryCode: String) -> UIImage? {
         let countries = self.getCountry(countryCode)
         
@@ -272,11 +272,11 @@ open class ADCountryPicker: UITableViewController {
         }
     }
     
-    /// Returns the country dialing code for the given country code
+    /// Returns the country dial code for the given country code
     ///
     /// - Parameter countryCode: ISO code of country to get dialing code for
-    /// - Returns: the dialing code for given country code if it exists
-    public func getDialingCode(countryCode: String) -> String? {
+    /// - Returns: the dial code for given country code if it exists
+    public func getDialCode(countryCode: String) -> String? {
         let countries = self.getCountry(countryCode)
         
         if countries.count == 1 {
