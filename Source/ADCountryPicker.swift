@@ -89,7 +89,11 @@ open class ADCountryPicker: UITableViewController {
         }
         
         // Adds current location
-        let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String ?? self.defaultCountryCode
+        var countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String ?? self.defaultCountryCode
+        if self.forceDefaultCountryCode {
+            countryCode = self.defaultCountryCode
+        }
+        
         sections.insert(Section(), at: 0)
         let locale = Locale.current
         let displayName = (locale as NSLocale).displayName(forKey: NSLocale.Key.countryCode, value: countryCode)
@@ -131,6 +135,9 @@ open class ADCountryPicker: UITableViewController {
     
     /// The default current location, if region cannot be determined. Defaults to US
     open var defaultCountryCode = "US"
+    
+    /// Flag to indicate whether the defaultCountryCode should be used even if region can be deteremined. Defaults to false
+    open var forceDefaultCountryCode = false
     
     // The text color of the alphabet scrollbar. Defaults to black
     open var alphabetScrollBarTintColor = UIColor.black
