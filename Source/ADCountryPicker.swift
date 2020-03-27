@@ -262,7 +262,7 @@ open class ADCountryPicker: UITableViewController {
     public func getFlag(countryCode: String) -> UIImage? {
         let countries = self.getCountry(countryCode)
         
-        if countries.count == 1 {
+        if countries.count > 0 {
             let bundle = "assets.bundle/"
             return UIImage(named: bundle + countries.first!.code.uppercased() + ".png",
                            in: Bundle(for: ADCountryPicker.self), compatibleWith: nil)
@@ -279,7 +279,7 @@ open class ADCountryPicker: UITableViewController {
     public func getDialCode(countryCode: String) -> String? {
         let countries = self.getCountry(countryCode)
         
-        if countries.count == 1 {
+        if countries.count > 0 {
             return countries.first?.dialCode
         }
         else {
@@ -294,7 +294,7 @@ open class ADCountryPicker: UITableViewController {
     public func getCountryName(countryCode: String) -> String? {
         let countries = self.getCountry(countryCode)
         
-        if countries.count == 1 {
+        if countries.count > 0 {
             return countries.first?.name
         }
         else {
