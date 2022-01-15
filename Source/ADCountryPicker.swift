@@ -197,6 +197,17 @@ open class ADCountryPicker: UITableViewController {
                                            alpha: 1)
     }
     
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+      
+        if let searchedText = searchController.searchBar.text , !searchedText.isEmpty {
+            updateSearchResults(for: searchController)
+        }
+    }
+    
+    
+    
     // MARK: Methods
     
     @objc private func dismissView() {
